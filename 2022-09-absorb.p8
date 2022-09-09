@@ -151,7 +151,7 @@ function _update60()
 	else
 		rf(p.x-35,p.y+8,p.x+50,p.y+17,0)
 		rf(p.x-15,p.y+18,p.x+25,p.y+27,0)
-		pr("you became "..p.a.."s old",p.x-27,p.y+10,6)
+		pr("u got "..p.a.."s old",p.x-27,p.y+10,6)
 		pr("press ❎",p.x-10,p.y+20,6)
 		if(b(❎))_init()
 	end
