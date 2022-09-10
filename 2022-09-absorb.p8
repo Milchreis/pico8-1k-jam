@@ -40,7 +40,7 @@ function dst(n,m)
 	dx=n.x-m.x
 	dy=n.y-m.y
 	if(abs(dy)>=99or abs(dx)>=99) return 32767
- return sqrt(dx*dx+dy*dy)
+	return sqrt(dx*dx+dy*dy)
 end
 
 function col(n,m)
