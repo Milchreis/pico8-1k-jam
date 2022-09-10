@@ -1,12 +1,5 @@
 -- pico-8 1k 2022
 -- milchreis
-c=circ
-cf=circfill
-ca=camera
-fp=fillp
-b=btn
-r=rnd
-a=abs
 w=800
 h=800
 p={}
@@ -35,7 +28,7 @@ function _init()
 
 	-- spawn stars
 	for i=0,999do
-		add(s,{x=r(w),y=r(h)})
+		add(s,{x=rnd(w),y=rnd(h)})
 	end
 	
 	for i=1,199do
@@ -46,7 +39,7 @@ end
 function dst(n,m)
 	dx=n.x-m.x
 	dy=n.y-m.y
-	if(a(dy)>=99or a(dx)>=99) return 32767
+	if(abs(dy)>=99or abs(dx)>=99) return 32767
  return sqrt(dx*dx+dy*dy)
 end
 
@@ -56,23 +49,23 @@ end
 
 function spawn()
 	add(e,{
-		x=r(w),
-		y=r(h),
-		d={r({-1,1})*r(1),r({-1,1})*r(1)},
+		x=rnd(w),
+		y=rnd(h),
+		d={rnd({-1,1})*rnd(1),rnd({-1,1})*rnd(1)},
 		v={0,0},
-		s=.001*r(10),
+		s=.001*rnd(10),
 		sk=.004,
-		c=r({6,14}),
-		r=min(p.r-3+r(p.r+3),10),
-		p=pat[r(5)\1],
+		c=rnd({6,14}),
+		r=min(p.r-3+rnd(p.r+3),10),
+		p=pat[rnd(5)\1],
 		t={}
 	})
 end
 
 function keys(i,k,o,v,n)
 	p.d[i]=0
-	if(b(k))p.d[i]=o
-	if(b(v))p.d[i]=n
+	if(btn(k))p.d[i]=o
+	if(btn(v))p.d[i]=n
 end
 
 function move(i)
@@ -84,24 +77,24 @@ function move(i)
 	i.x+=i.v[1]
 	i.y+=i.v[2]
 	
-	i.r-=(a(i.v[1])+a(i.v[2]))*i.sk
+	i.r-=(abs(i.v[1])+abs(i.v[2]))*i.sk
 end
 
 function trace(o,c,s)
 	for l in all(o.t)do
 		l.r*=s
-		fp(░)
-		cf(l.x,l.y,l.r,c)
+		fillp(░)
+		circfill(l.x,l.y,l.r,c)
 		if(l.r<=1)del(o.t,l)
 	end
 end
 
 function dot(t,o,a)
-		cf(t.x,t.y,t.r,0)
-		fp(t.p)
-		cf(t.x,t.y,t.r+o-2,a)
-		fp()
-		c(t.x,t.y,t.r+o,t.c)
+		circfill(t.x,t.y,t.r,0)
+		fillp(t.p)
+		circfill(t.x,t.y,t.r+o-2,a)
+		fillp()
+		circ(t.x,t.y,t.r+o,t.c)
 end
 
 function _update60()
@@ -111,29 +104,31 @@ function _update60()
 		
 	if(p.r>0.6)move(p)
 	
- 	cmx=mid(p.x-64,w-128)
- 	cmy=mid(p.y-64,h-128)
-	ca(cmx,cmy)
+	cmx=mid(p.x-64,w-128)
+	cmy=mid(p.y-64,h-128)
+	camera(cmx,cmy)
 	
 	foreach(e,move)
 	
 	-- init
+	p.p=▒
 	for t in all(e)do
 		if t.c!=6then
 			d=dst(t,p)
 			t.d={(p.x-t.x)/d,(p.y-t.y)/d}
 		end
-	
 		if(t.r<=0.3or t.x+t.r*2<0or t.x-t.r*2>w or t.y-t.r*2>h) del(e,t) spawn()
 		if t.r>0and col(t,p)then
 			if p.r>=t.r and t.c==6then
+				p.p=♥
 				p.r+=.3
 				t.r=max(0,t.r-.3)
 				?"\ai7x1v2c1e1g1"
 			elseif p.r>0.6then
+				p.p=ˇ
 				p.r=max(.6,p.r-.3)
 				t.r=min(35,t.r+.3)
-				ca(cmx+r(3),cmy+r(3))
+				camera(cmx+rnd(3),cmy+rnd(3))
 				?"\ai7v2c1g0"
 			end
 		end
@@ -144,10 +139,7 @@ function _update60()
 	o=sin(t()*1.1)+1
 
 	-- starfield
-	for t in all(s)do
-		c(t.x,t.y,0,1)
-	end
-		
+	foreach(s,function(t)circ(t.x,t.y,0,1)end)
 	trace(p,1,.995)
 
 	-- enemys
@@ -163,6 +155,6 @@ function _update60()
 		dot(p,o,1)		
 	else
 		?"age "..p.a.." ❎",p.x-27,p.y+10,6
-		if(b(❎))_init()
+		if(btn(❎))_init()
 	end
 end
