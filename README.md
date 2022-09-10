@@ -7,4 +7,4 @@
 **Absorb** 
 > Osmos inspired game
 
-![pico1k_2022_3](https://user-images.githubusercontent.com/544436/189378520-4ed5e88b-7a32-4545-a3de-72155d93d5fb.gif)
+![pico1k_2022_6](https://user-images.githubusercontent.com/544436/189461203-e988c939-5c2b-44f4-9a8e-87af60de1c1f.gif)
