@@ -3,7 +3,7 @@ h=800
 p={}
 e={}
 s={}
-_a={▒,█,░,▤,▥}
+_a={▒,░,▤,▥}
 f=0
 function _init()
 p={x=64,y=64,r=3,c=12,p=▒,s=.015,sk=.001,v={0,0},d={0,0},a=0,t={}
@@ -28,7 +28,7 @@ return _b(n,m)<=(n.r)+(m.r)
 end
 function _d()
 add(e,{
-x=rnd(w),y=rnd(h),d={rnd({-1,1})*rnd(1),rnd({-1,1})*rnd(1)},v={0,0},s=.001*rnd(10),sk=.004,c=rnd({6,14}),r=min(p.r-3+rnd(p.r+3),10),p=_a[rnd(5)\1],t={}
+x=rnd(w),y=rnd(h),d={rnd({-1,1})*rnd(1),rnd({-1,1})*rnd(1)},v={0,0},s=.001*rnd(10),sk=.004,c=rnd({6,14}),r=min(p.r-3+rnd(p.r+3),10),p=_a[1+rnd(5)\1],t={}
 })
 end
 function _e(i,k,o,v,n)
@@ -100,10 +100,10 @@ if(t.c==6)_h(t,o,6)
 if(t.c!=6)_h(t,o,2)
 end
 if p.r>0.6then
-p.a=t()\1
+p.a+=.016
 _h(p,o,1)
 else
-?"age " ..p.a.." ❎",p.x-27,p.y+10,6
+?"age "..p.a\1 .." ❎",p.x-27,p.y+10,6
 if(btn(❎))_init()
 end
 end
