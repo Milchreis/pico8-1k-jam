@@ -5,7 +5,7 @@ h=800
 p={}
 e={}
 s={}
-pat={▒,█,░,▤,▥}
+pat={▒,░,▤,▥}
 f=0
 
 function _init()
@@ -57,7 +57,7 @@ function spawn()
 		sk=.004,
 		c=rnd({6,14}),
 		r=min(p.r-3+rnd(p.r+3),10),
-		p=pat[rnd(5)\1],
+		p=pat[1+rnd(5)\1],
 		t={}
 	})
 end
@@ -151,10 +151,10 @@ function _update60()
 
 	-- player
 	if p.r>0.6then
-		p.a=t()\1
+		p.a+=.016
 		dot(p,o,1)		
 	else
-		?"age "..p.a.." ❎",p.x-27,p.y+10,6
+		?"age "..p.a\1 .." ❎",p.x-27,p.y+10,6
 		if(btn(❎))_init()
 	end
 end
