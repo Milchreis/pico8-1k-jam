@@ -58,4 +58,11 @@ tweens.create()
   .start()
   -- stops the tween
   .stop()
+
+-- easings
+tweens.linear
+tweens.ease_in_quad
+tweens.ease_out_quad
+tweens.ease_in_sin
+tweens.ease_out_sin
 ```
