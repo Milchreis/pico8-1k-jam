@@ -12,3 +12,11 @@
 ![pico1k_2022_1](https://user-images.githubusercontent.com/544436/189496187-091f3262-a6a4-4e5e-9d23-74f55272b5ec.gif)
  * play it here on [splore](https://www.lexaloffle.com/bbs/?tid=49288)
  * download and play it on [itch](https://milchreiz.itch.io/absorb)
+
+## September 2023
+**Tween library** 
+> small library to create simple as possible tweens in PICO-8
+![screencast_tween](https://github.com/Milchreis/pico8-1k-jam/assets/544436/ddde853f-834d-4b8b-86bd-e248e607bd55)
+
+ * [source code](https://github.com/Milchreis/pico8-1k-jam/blob/main/2023-09-05_tween.p8)
+ * [example](https://github.com/Milchreis/pico8-1k-jam/blob/main/2023-09-05_tween_example.p8)
