@@ -16,7 +16,46 @@
 ## September 2023
 **Tween library** 
 > small library to create simple as possible tweens in PICO-8
+
 ![screencast_tween](https://github.com/Milchreis/pico8-1k-jam/assets/544436/ddde853f-834d-4b8b-86bd-e248e607bd55)
 
  * [source code](https://github.com/Milchreis/pico8-1k-jam/blob/main/2023-09-05_tween.p8)
  * [example](https://github.com/Milchreis/pico8-1k-jam/blob/main/2023-09-05_tween_example.p8)
+
+### Simple example
+```lua
+-- some object
+t={x=1, y=2}
+
+function _init()
+ -- create a new tween
+ tweens.create()
+  -- add a motion for t[x] and move it to x=10 in 3s (linear)
+  .add(t, "x", 10, 3)
+  -- stay for 1s
+  .delay(1)
+  .start()
+end
+
+function _update60()
+ -- update all tweens in each frame
+ tweens.update()
+end
+```
+
+### API
+```lua
+tweens.create()
+  -- all motions will played in parallel
+  .parallel()
+  -- adds a new motion for obj[key] to bring it to target in duration in seconds
+  .add(obj, key, target, duration, easing)
+  -- stay for a duration in seconds
+  .delay()
+  -- set a listener for finished tweens. It will call listener(tween)
+  .on_finish(some_function)
+  -- starts the tween
+  .start()
+  -- stops the tween
+  .stop()
+```
