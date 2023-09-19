@@ -29,6 +29,9 @@ e={}
 
 -- all rocks for the current level
 r={}
+-- level definitions
+-- first element of a level has the no. of enemies
+-- following elements are positions for rocks
 l={
  -- l1
  {5},
@@ -248,6 +251,8 @@ function _update60()
  ?"⧗"..flr(total_t),1,1,7
  
  -- lvl progress
+ -- calc is not dynamic with #l
+ -- because not enougth token in the end  
  rectfill(109,2,109+(cur_l-1)*2,4,7)
  rect(109,2,125,4,7)
 end
