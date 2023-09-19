@@ -31,7 +31,7 @@
  * [source code](https://github.com/Milchreis/pico8-1k-jam/blob/main/2023-09-05_tween.p8)
  * [example](https://github.com/Milchreis/pico8-1k-jam/blob/main/2023-09-05_tween_example.p8)
 
-### Simple example
+#### Simple example
 ```lua
 -- some object
 t={x=1, y=2}
@@ -52,7 +52,7 @@ function _update60()
 end
 ```
 
-### API
+#### API
 ```lua
 tweens.create()
   -- all motions will played in parallel
