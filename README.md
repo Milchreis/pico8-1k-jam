@@ -1,6 +1,7 @@
 # PICO-8 1k-jam
 
- * Make cool things in PICO-8 by using only 1K (1024) Compressed Bytes of code
+> Make cool things in PICO-8 by using only 1K (1024) Compressed Bytes of code
+
  * [Game jam page 2024](https://itch.io/jam/pico-1k-2024)
  * [Game jam page 2023](https://itch.io/jam/pico-1k-2023)
  * [Game jam page 2022](https://itch.io/jam/pico-1k-2022)
