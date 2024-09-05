@@ -10,6 +10,10 @@
 ### 🛠 Helicoptr
 > Rescue some boxes with power of a helicopter
 
+ * play it on [itch](https://milchreiz.itch.io/helicoptr)
+ * [source code](https://github.com/Milchreis/pico8-1k-jam/blob/main/2024-09-xy_helicoptr.p8)
+
+
 ## September 2023
 ### Let Lasso
 > One button catching game
