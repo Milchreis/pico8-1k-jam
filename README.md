@@ -7,7 +7,8 @@
  * [Game jam page 2022](https://itch.io/jam/pico-1k-2022)
 
 ## September 2024
-### 🛠 
+### 🛠 Helicoptr
+> Rescue some boxes with power of a helicopter
 
 ## September 2023
 ### Let Lasso
