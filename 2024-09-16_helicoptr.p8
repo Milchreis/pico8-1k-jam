@@ -2,12 +2,9 @@
 -- by milchreis
 -- for pico-1k jam in 2024 ♥
 
--- todos
---  - win screen
---  - compress to 1024 bytes
-
 -- game
 past_time=0
+over=0
 
 -- heli data
 accel=0
@@ -17,7 +14,6 @@ y=110
 dir={0,0} -- direction[x,y]
 voff=0
 hoff=0
-speed=3
 fuel=100
 box=0
 
@@ -38,9 +34,9 @@ for i=1,7 do
   -- y
   rnd(74)+10,
   -- width
-  3+rnd(3),
+  3+rnd(3)
   -- catched
-  0})
+  })
 end
 
 -- box save areas
@@ -52,7 +48,6 @@ for i=1,7 do
 end
 
 function _update60()
-
  -- draw bg
  cls(1)
 
@@ -115,12 +110,12 @@ function _update60()
  line(x,y,rope_x,rope_y,8)
 
  -- body
- shorten=4-accel*40
+ shorten=4-accel*60
  ovf(
   x+hoff,
   y+voff,
-  3+(accel*50), -- max=8
-  6+(accel*80), -- max 14
+  3+(accel*70),  -- max 10
+  6+(accel*100), -- max 16
   9)
   
  rectfill(
@@ -134,7 +129,7 @@ function _update60()
   y+17-voff-shorten,9)
 
  -- cockpit 
- shorten=2-accel*20
+ shorten=2-accel*40
  ovf(
   x-hoff*.02,
   y-2,
@@ -151,7 +146,7 @@ function _update60()
   9)
 
  -- rotor 1
- shorten=3-accel*30
+ shorten=3-accel*50
  rx1,ry1=rot(x-12+shorten,y,x,y,a)
  rx2,ry2=rot(x+12-shorten,y,x,y,a)
  line(rx1,ry1,rx2,ry2,0)
@@ -162,20 +157,27 @@ function _update60()
  line(rx1,ry1,rx2,ry2,0)
 
  a+=accel
- 
+  
  -- fuel
- rectfill(100,2,100+25*(fuel/100),4,7)
+ rectfill(
+ 	100,2,
+ 	100+25*(fuel/100),4,
+ 	7)
  
+ -- acceleration
+ rectfill(
+ 	100,5,
+ 	100+26*(accel*10),5,
+ 	6)
+  
  -- time
  ?"⧗"..flr(past_time),1,1,7
   
  -- debug
- -- print(a)
- -- print(catched_boxes)
+ -- print(placed)
 
  -- gameover
- if(fuel==0) then
-  accel=max(0,accel-.0009)
+ if over==true then
   x+=(hp_x-x)*.02
   y+=(hp_x-y)*.02
   rope_x=x
@@ -184,25 +186,30 @@ function _update60()
   return
  end
  
+ -- check for gameover
+ -- empty fuel tank or landing on water
+ over=fuel==0 or (accel==0 and y<95)
+  
  -- speed
  if btn(❎) then
   accel=min(accel+.0005,.1)
-  fuel=max(0,fuel-.1)
+  fuel=max(0,fuel-accel*2)
  else
-  accel=max(0,accel-.0009) 
+  accel=max(0,accel-.0009)
  end
   
  -- movement
- if accel>.05 then
+ if accel>.02 then
   keys(1,➡️,1,⬅️,-1)
   keys(2,⬆️,-1,⬇️,1)
  end
  
  -- update movement and squishy controls
- x+=dir[1]*accel*speed
+ -- direction * current acceleration and a speed factor
+ x+=dir[1]*accel*4
  dir[1]=to_null(dir[1],.02)
  
- y+=dir[2]*accel*speed
+ y+=dir[2]*accel*4
  dir[2]=to_null(dir[2],.02)
  
  -- update tilt and shift offset
