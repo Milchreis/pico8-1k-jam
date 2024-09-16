@@ -10,8 +10,9 @@
 ### 🛠 Helicoptr
 > Rescue some boxes with power of a helicopter
 
- * play it on [itch](https://milchreiz.itch.io/helicoptr)
- * [source code](https://github.com/Milchreis/pico8-1k-jam/blob/main/2024-09-xy_helicoptr.p8)
+![helicoptr_0](https://github.com/user-attachments/assets/22c05953-d4f8-4df3-b7ff-9a265e8e64ab)
+ * play it on [itch](https://milchreiz.itch.io/helicoptr-1k)
+ * [source code](https://github.com/Milchreis/pico8-1k-jam/blob/main/2024-09-16_helicoptr.p8)
 
 
 ## September 2023
