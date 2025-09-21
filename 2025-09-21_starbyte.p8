@@ -11,7 +11,7 @@ x=64
 y=110
 dx=0
 speed=.7
-level=2
+level=4
 shoot_cd=0
 
 -- fighting
@@ -78,45 +78,47 @@ function _update60()
  
  if(lm.y>130)lm.dy=0
  
- -- spawn enemy
- if rnd(1)<.01*level then
-  add(enemies,{
-   x=rnd(128),
-   y=-10,
-   dx=0,
-   dy=1+rnd(.5),
-   s=rnd(1)>.5,
-   c=rnd({8,9}),
-   lvl=flr(rnd(level+1))
-  })
- end
- 
- -- spawn power ups
- if powerup_spw>3*level then
-  add(powerups,{
+ if speed>0 then
+  -- spawn enemy
+  if rnd(1)<.01*level then
+    add(enemies,{
     x=rnd(128),
     y=-10,
-    dy=.5
-   })
-  powerup_spw=0
- end 
-
- -- ship controls
- if(btn(0))dx-=speed/9
- if(btn(1))dx+=speed/9
- dx*=.95
- x=max(3,min(x+dx,128))
-
- -- fire
- if btn(5) and shoot_cd==0 and speed>0 then
-  add(bullets,{
-    x=x,
-    y=y-4,
     dx=0,
-    dy=-2
-  })
-  shoot_cd=20/level*2
- end
+    dy=1+rnd(.5),
+    s=rnd(1)>.5,
+    c=rnd({8,9}),
+    lvl=flr(rnd(level+1))
+    })
+  end
+  
+  -- spawn power ups
+  if powerup_spw>3*level then
+    add(powerups,{
+      x=rnd(128),
+      y=-10,
+      dy=.5
+    })
+    powerup_spw=0
+  end 
+
+  -- ship controls
+  if(btn(0))dx-=speed/9
+  if(btn(1))dx+=speed/9
+  dx*=.95
+  x=max(3,min(x+dx,128))
+
+  -- fire
+  if btn(5) and shoot_cd==0 then
+    add(bullets,{
+      x=x,
+      y=y-4,
+      dx=0,
+      dy=-2
+    })
+    shoot_cd=20/level*2
+  end
+end
    
  -- update bullets
  for b in all(bullets) do
