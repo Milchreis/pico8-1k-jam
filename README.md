@@ -11,7 +11,7 @@
 ### 🛠 Starbyte
 > Free space from enemies and grow with your spaceship
 
-![starbyte_0](https://github.com/user-attachments/assets/22c05953-d4f8-4df3-b7ff-9a265e8e64ab)
+![starbyte_0](https://github.com/user-attachments/assets/dbad38bb-6c3b-4dbf-9fbc-553d34e5b83e)
  * play it on [itch](https://milchreiz.itch.io/starbyte-1k)
  * [source code](https://github.com/Milchreis/pico8-1k-jam/blob/main/2025-09-21_starbyte.p8)
 
