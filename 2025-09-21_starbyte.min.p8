@@ -1,4 +1,4 @@
-a=0n={e=-8,f=0,t=0}e=64d=110l=0i=.7f=4r=0o={}h={}s={}g={}u=0c={}j=0for n=1,40do add(g,{d=rnd(128),e=rnd(128)})end function b(n,e,d,f,i)return(n-d)^2+(e-f)^2<=i^2end function m()f-=1k(e,d,8)k(e,d,12)u=5if(f<1)i=0n.e=d-6n.t=flr(a)u=128
+a=0n={e=-8,f=0,t=0}e=64d=110l=0i=.7f=2r=0o={}h={}s={}g={}u=0c={}j=0for n=1,40do add(g,{d=rnd(128),e=rnd(128)})end function b(n,e,d,f,i)return(n-d)^2+(e-f)^2<=i^2end function m()f-=1k(e,d,8)k(e,d,12)u=5if(f<1)i=0n.e=d-6n.t=flr(a)u=128
 end function k(n,e,d)for f=1,5do p=sin(rnd(1)*6)add(s,{d=n,e=e,o=p*rnd(2,4),f=p*rnd(2,4),u=128,i=d})end end function _update60()if(btnp(4))run()
 r=max(r-1,0)a=time()*i if(flr(a)-9>n.t)n.e=-8n.f=i n.t=flr(a)else n.e+=n.f
 if(n.e>130)n.f=0
