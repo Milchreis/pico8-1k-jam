@@ -11,7 +11,7 @@ x=64
 y=110
 dx=0
 speed=.7
-level=4
+level=2
 shoot_cd=0
 
 -- fighting
