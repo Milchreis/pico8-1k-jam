@@ -8,10 +8,10 @@
  * [Game jam page 2022](https://itch.io/jam/pico-1k-2022)
 
 ## September 2025
-### 🛠 Starbyte
-> Free space from enemies and grow with your spaceship
+### Starbyte
+> An arcade shoot-em-up in space
 
-![starbyte_0](https://github.com/user-attachments/assets/dbad38bb-6c3b-4dbf-9fbc-553d34e5b83e)
+![starbyte 0](https://github.com/user-attachments/assets/91addf72-b531-48ac-a7a7-c0d29fea46c8)
  * play it on [itch](https://milchreiz.itch.io/starbyte-1k)
  * [source code](https://github.com/Milchreis/pico8-1k-jam/blob/main/2025-09-21_starbyte.p8)
 
