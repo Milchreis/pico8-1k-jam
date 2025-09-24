@@ -3,6 +3,7 @@
 -- for pico-1k jam in 2025 ♥
 -- ---
 
+-- score
 points=0
 lm={y=-8,dy=0,p=0}
 
@@ -41,7 +42,6 @@ end
 
 function gg()
  level=0
- --explosion(x,y,8,4) -- maybe to save tokens
  explosion(x,y,12,4)
  if level==0 then
   speed=0
@@ -53,18 +53,18 @@ end
 
 function explosion(x,y,c,f)
  for i=1,5*f do
-  a=sin(rnd(1)*6)
+  a=sin(rnd()*6)
   add(particles,{x=x,y=y,dx=a*rnd(2,4),dy=a*rnd(2,4),l=128,c=c})
  end
 end
 
 function _update60()
  -- restart game 
- if(btn(5) and speed==0 and shake_fps==0) run()
+ if(btn(5) and speed+shake_fps==0) run()
  
  -- shooting
- shoot_cd=max(shoot_cd-1,0)
-  
+ shoot_cd=max(0,shoot_cd-1)
+
  if speed>0 then
   -- update points and landmark
   points=t()*speed
@@ -77,15 +77,15 @@ function _update60()
   end
 
   -- spawn enemy
-  if rnd(1)<.01*level then
+  if rnd()<.01*level then
    add(enemies,{
     x=rnd(128),
     y=-10,
     dx=0,
     dy=1+rnd(.5),
-    s=rnd(1)>.5,
+    s=rnd()>.5,
     c=rnd({8,9}),
-    lvl=flr(rnd(level+1))
+    l=flr(rnd(level+1))
    })
   end
   
@@ -264,19 +264,19 @@ function _update60()
   -- base
   circ(e.x,e.y,2,e.c)
 
-  if e.lvl>1 then
+  if e.l>1 then
    circ(e.x-3,e.y,1,e.c)
    circ(e.x+3,e.y,1,e.c)
   end
 
   -- wings
-  if e.lvl>2 then
+  if e.l>2 then
    line(e.x-3,e.y,e.x-5,e.y-2,e.c)
    line(e.x+3,e.y,e.x+5,e.y-2,e.c)
   end
   
   -- booster
-  if(e.lvl>3) rect(e.x-1,e.y-4,e.x+1,e.y-2,e.c)
+  if(e.l>3) rect(e.x-1,e.y-4,e.x+1,e.y-2,e.c)
 
   -- can shoot?
   if (e.s) circ(e.x,e.y+2,1,7)
