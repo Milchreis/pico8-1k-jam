@@ -163,7 +163,7 @@ function _update60()
     del(enemies,e)
     explosion(e.x,e.y,8,3)
     powerup_spw+=1
-    shake_fps=3
+    shake_fps+=3
    end
   end
  end
