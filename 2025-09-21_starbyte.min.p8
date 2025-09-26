@@ -11,7 +11,7 @@ if(b(n.d,n.e,e,d,6))m()del(o,n)
 end for n in all(h)do n.d+=mid(-.5,(e-n.d)*.02,.5)n.e+=n.f if(n.e>128)del(h,n)
 if(n.r and abs(n.d-e)<9)add(o,{d=n.d,e=n.e+7,t=0,f=n.f+1})n.r=nil
 if(b(n.d,n.e,e,d,8))del(h,n)m()
-for e in all(o)do if(b(e.d,e.e,n.d,n.e,6))del(o,e)del(h,n)k(n.d,n.e,8,3)j+=1r=3
+for e in all(o)do if(b(e.d,e.e,n.d,n.e,6))del(o,e)del(h,n)k(n.d,n.e,8,3)j+=1r+=3
 end end for n in all(g)do n.e+=i if(n.e>128)n.e=0
 end for n in all(s)do n.d+=n.t n.e+=n.f n.o-=1if(n.o<1)del(s,n)
 end for n in all(c)do n.e+=n.f+i/2if(n.e>128)del(c,n)
