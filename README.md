@@ -2,10 +2,21 @@
 
 > Make cool things in PICO-8 by using only 1K (1024) Compressed Bytes of code
 
+ * [Game jam page 2026](https://itch.io/jam/pico-1k-2026)
  * [Game jam page 2025](https://itch.io/jam/pico-1k-2025)
  * [Game jam page 2024](https://itch.io/jam/pico-1k-2024)
  * [Game jam page 2023](https://itch.io/jam/pico-1k-2023)
  * [Game jam page 2022](https://itch.io/jam/pico-1k-2022)
+
+
+## September 2026
+### Crowd
+> A demake of a crowd runner game
+
+![starbyte 0](https://github.com/user-attachments/assets/91addf72-b531-48ac-a7a7-c0d29fea46c8)
+ * play it on [itch](https://milchreiz.itch.io/crowd-1k)
+ * [source code](https://github.com/Milchreis/pico8-1k-jam/blob/main/2026-09-30_crowd.p8)
+
 
 ## September 2025
 ### Starbyte
