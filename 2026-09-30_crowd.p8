@@ -104,7 +104,7 @@ function _update60()
 
   -- power-ups: spawn every 6 seconds, fall down
   if tmr % 360 == 0 then
-   add(pwrs, { x = 80 + rnd(25), y = -20, hp = 5 + #unts * .7 \ 1 })
+   add(pwrs, { x = 80 + rnd(40), y = -20, hp = 5 + #unts * .7 })
   end
 
   -- power-ups: move down, remove off-screen
@@ -121,7 +121,6 @@ function _update60()
       burst(p, 11, 20)
       shk = 8
       del(pwrs, p)
-      break
      end
     end
    end
@@ -180,6 +179,7 @@ function _update60()
 
  -- draw
  cls(1)
+ rect(64,0,64,128,9)
 
  -- screen shake
  if (shk > 0) camera(rnd(3), rnd(3))
