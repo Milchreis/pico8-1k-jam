@@ -13,7 +13,7 @@
 ### Crowd
 > A demake of a crowd runner game
 
-![starbyte 0](https://github.com/user-attachments/assets/91addf72-b531-48ac-a7a7-c0d29fea46c8)
+![crowd](https://github.com/user-attachments/assets/c1382108-0c30-44ae-b836-a021c947f697)
  * play it on [itch](https://milchreiz.itch.io/crowd-1k)
  * [source code](https://github.com/Milchreis/pico8-1k-jam/blob/main/2026-09-30_crowd.p8)
 
